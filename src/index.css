@@ -5,84 +5,92 @@
 @tailwind utilities;
 
 /* Professional Portfolio Design System - Muhammad Huzaifa */
+/* Rich Black & Oxford Blue Theme with Mikado Yellow & Gold Accents */
 
 @layer base {
   :root {
-    /* Core Background & Foreground */
-    --background: 0 0% 100%;
-    --foreground: 220 13% 18%;
+    /* Rich Black & Oxford Blue Backgrounds */
+    --background: 225 100% 4%;
+    --foreground: 50 100% 95%;
 
-    /* Professional Blue Palette */
-    --primary: 220 91% 42%;
-    --primary-dark: 220 91% 35%;
-    --primary-light: 220 91% 50%;
-    --primary-foreground: 0 0% 100%;
+    /* Oxford Blue & Yale Blue Cards */
+    --card: 210 100% 12%;
+    --card-foreground: 50 100% 95%;
 
-    /* Accent Colors */
-    --accent: 200 100% 45%;
-    --accent-light: 200 100% 55%;
-    --accent-foreground: 0 0% 100%;
+    /* Yale Blue Secondary Elements */
+    --secondary: 210 100% 20%;
+    --secondary-dark: 210 100% 16%;
+    --secondary-foreground: 50 100% 95%;
 
-    /* Professional Grays */
-    --secondary: 220 14% 96%;
-    --secondary-dark: 220 14% 89%;
-    --secondary-foreground: 220 13% 18%;
+    /* Mikado Yellow & Gold Accents */
+    --primary: 47 100% 50%;
+    --primary-dark: 45 100% 45%;
+    --primary-light: 50 100% 55%;
+    --primary-foreground: 225 100% 4%;
 
-    /* Neutral Tones */
-    --muted: 220 14% 96%;
-    --muted-dark: 220 14% 89%;
-    --muted-foreground: 220 9% 46%;
+    /* Gold Highlights */
+    --accent: 50 100% 52%;
+    --accent-light: 52 100% 60%;
+    --accent-foreground: 225 100% 4%;
 
-    /* Success & Warning */
+    /* Muted Elements */
+    --muted: 210 100% 16%;
+    --muted-dark: 210 100% 12%;
+    --muted-foreground: 210 20% 70%;
+
+    /* UI Elements */
+    --border: 210 100% 20%;
+    --input: 210 100% 16%;
+    --ring: 47 100% 50%;
+
+    /* Status Colors */
     --success: 142 71% 45%;
     --warning: 38 92% 50%;
     --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
     /* Professional Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-dark)) 0%, hsl(var(--primary)) 50%, hsl(var(--accent)) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(47, 100%, 50%) 0%, hsl(50, 100%, 52%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(225, 100%, 4%) 0%, hsl(210, 100%, 12%) 50%, hsl(210, 100%, 20%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(210, 100%, 12%) 0%, hsl(210, 100%, 16%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(225, 100%, 4%) 0%, hsl(210, 100%, 12%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(47, 100%, 50%) 0%, hsl(50, 100%, 52%) 100%);
 
     /* Professional Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(220 13% 18% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(220 13% 18% / 0.1), 0 2px 4px -1px hsl(220 13% 18% / 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(220 13% 18% / 0.1), 0 4px 6px -2px hsl(220 13% 18% / 0.05);
-    --shadow-xl: 0 20px 25px -5px hsl(220 13% 18% / 0.1), 0 10px 10px -5px hsl(220 13% 18% / 0.04);
-    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
-    --shadow-card: 0 4px 6px -1px hsl(220 13% 18% / 0.1);
+    --shadow-sm: 0 1px 2px 0 hsl(225 100% 4% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(225 100% 4% / 0.1), 0 2px 4px -1px hsl(225 100% 4% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(225 100% 4% / 0.1), 0 4px 6px -2px hsl(225 100% 4% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(225 100% 4% / 0.1), 0 10px 10px -5px hsl(225 100% 4% / 0.04);
+    --shadow-glow: 0 0 30px hsl(47 100% 50% / 0.4);
+    --shadow-card: 0 4px 6px -1px hsl(225 100% 4% / 0.2);
+    --shadow-gold: 0 0 20px hsl(50 100% 52% / 0.3);
 
     /* Animation Durations */
     --transition-fast: 150ms;
     --transition-normal: 300ms;
     --transition-slow: 500ms;
 
-    /* Card & UI Elements */
-    --card: 0 0% 100%;
-    --card-foreground: 220 13% 18%;
-    --border: 220 14% 89%;
-    --input: 220 14% 89%;
-    --ring: 220 91% 42%;
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 220 26% 14%;
-    --foreground: 0 0% 98%;
-    --primary: 220 91% 50%;
-    --primary-dark: 220 91% 42%;
-    --primary-light: 220 91% 60%;
-    --accent: 200 100% 55%;
-    --accent-light: 200 100% 65%;
-    --secondary: 220 26% 18%;
-    --secondary-dark: 220 26% 16%;
-    --muted: 220 26% 18%;
-    --muted-dark: 220 26% 16%;
-    --muted-foreground: 220 9% 65%;
-    --card: 220 26% 16%;
-    --border: 220 26% 22%;
-    --input: 220 26% 22%;
-    --ring: 220 91% 50%;
+    /* Maintain same dark theme values */
+    --background: 225 100% 4%;
+    --foreground: 50 100% 95%;
+    --primary: 47 100% 50%;
+    --primary-dark: 45 100% 45%;
+    --primary-light: 50 100% 55%;
+    --accent: 50 100% 52%;
+    --accent-light: 52 100% 60%;
+    --secondary: 210 100% 20%;
+    --secondary-dark: 210 100% 16%;
+    --muted: 210 100% 16%;
+    --muted-dark: 210 100% 12%;
+    --muted-foreground: 210 20% 70%;
+    --card: 210 100% 12%;
+    --border: 210 100% 20%;
+    --input: 210 100% 16%;
+    --ring: 47 100% 50%;
   }
 }
 
@@ -113,6 +121,10 @@
   .gradient-card {
     background: var(--gradient-card);
   }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
   
   .shadow-professional {
     box-shadow: var(--shadow-card);
@@ -121,6 +133,10 @@
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
   
   .animate-fade-up {
     animation: fadeUp 0.6s ease-out forwards;
@@ -128,6 +144,11 @@
   
   .animate-slide-left {
     animation: slideLeft 0.8s ease-out forwards;
+  }
+
+  /* Framer Motion will replace these */
+  .motion-safe .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
 
@@ -150,5 +171,14 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
   }
 }

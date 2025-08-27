@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import { Code, Database, Globe, Settings } from "lucide-react"
 
 const skillsData = [
@@ -27,49 +28,113 @@ const skillsData = [
   }
 ]
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.1
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
+
 export default function SkillsSection() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Technical <span className="text-primary">Skills</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A comprehensive toolkit of modern technologies and programming languages
             </p>
-          </div>
+          </motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {skillsData.map((category, index) => (
-              <div key={index} className="bg-card rounded-xl p-6 shadow-professional hover:shadow-glow transition-all duration-300 animate-fade-up" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-full flex items-center justify-center mb-6 mx-auto shadow-glow`}>
-                  <div className="text-white">
+              <motion.div 
+                key={index} 
+                className="bg-card rounded-xl p-6 shadow-professional hover:shadow-gold transition-all duration-300"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -10 }}
+              >
+                <motion.div 
+                  className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mb-6 mx-auto shadow-gold"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="text-primary-foreground">
                     {category.icon}
                   </div>
-                </div>
+                </motion.div>
                 
-                <h3 className="text-xl font-bold text-foreground text-center mb-4">
+                <motion.h3 
+                  className="text-xl font-bold text-foreground text-center mb-4"
+                  whileHover={{ color: "hsl(47, 100%, 50%)" }}
+                >
                   {category.category}
-                </h3>
+                </motion.h3>
                 
                 <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="bg-secondary rounded-lg p-3 text-center">
+                    <motion.div 
+                      key={skillIndex} 
+                      className="bg-secondary rounded-lg p-3 text-center"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: skillIndex * 0.1 }}
+                      whileHover={{ scale: 1.05, backgroundColor: "hsl(47, 100%, 50%)" }}
+                    >
                       <span className="text-secondary-foreground font-medium">{skill}</span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
           
           {/* Skill Level Indicators */}
-          <div className="mt-16 bg-card rounded-2xl p-8 shadow-professional">
-            <h3 className="text-2xl font-bold text-foreground text-center mb-8">
+          <motion.div 
+            className="mt-16 bg-card rounded-2xl p-8 shadow-professional"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            whileHover={{ scale: 1.02 }}
+          >
+            <motion.h3 
+              className="text-2xl font-bold text-foreground text-center mb-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
               Proficiency Levels
-            </h3>
+            </motion.h3>
             
             <div className="grid md:grid-cols-2 gap-8">
               {[
@@ -80,21 +145,39 @@ export default function SkillsSection() {
                 { skill: "Web Development", level: 90 },
                 { skill: "Problem Solving", level: 95 }
               ].map((item, index) => (
-                <div key={index} className="space-y-2">
+                <motion.div 
+                  key={index} 
+                  className="space-y-2"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
                   <div className="flex justify-between">
                     <span className="text-foreground font-medium">{item.skill}</span>
-                    <span className="text-primary font-semibold">{item.level}%</span>
+                    <motion.span 
+                      className="text-primary font-semibold"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.5 + index * 0.1 }}
+                    >
+                      {item.level}%
+                    </motion.span>
                   </div>
                   <div className="w-full bg-secondary rounded-full h-3">
-                    <div 
-                      className="h-3 bg-gradient-primary rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${item.level}%` }}
-                    ></div>
+                    <motion.div 
+                      className="h-3 bg-gradient-primary rounded-full"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${item.level}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.5, delay: 0.5 + index * 0.1, ease: [0.6, -0.05, 0.01, 0.99] }}
+                    />
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
