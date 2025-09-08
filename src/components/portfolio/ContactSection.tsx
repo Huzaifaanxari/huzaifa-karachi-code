@@ -29,7 +29,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Email</h4>
-                    <p className="text-muted-foreground">huzaifa@example.com</p>
+                    <p className="text-muted-foreground">huzaifaaptech321@gmail.com</p>
                   </div>
                 </div>
                 
@@ -39,7 +39,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Phone</h4>
-                    <p className="text-muted-foreground">+92 XXX XXXXXXX</p>
+                    <p className="text-muted-foreground">+92 344 1266039</p>
                   </div>
                 </div>
                 
@@ -50,7 +50,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-semibold text-foreground">Portfolio</h4>
                     <a 
-                      href="http://huzaifaweb.xyz" 
+                      href="https://portfolio-p7dmnq5wn-huzaifaaptech321-gmailcoms-projects.vercel.app/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary-dark transition-colors"

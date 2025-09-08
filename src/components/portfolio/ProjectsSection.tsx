@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
+import { useState } from "react"
 import calculatorProject from "@/assets/calculator-project.jpg"
 import weatherProject from "@/assets/weather-project.jpg"
 import ecommerceProject from "@/assets/ecommerce-project.jpg"
@@ -8,70 +9,62 @@ import ecommerceProject from "@/assets/ecommerce-project.jpg"
 const projects = [
   {
     title: "Calculator App",
-    description: "A modern, responsive calculator application built with clean UI design and advanced mathematical operations. Features include history tracking and keyboard support.",
+    description: "A modern, responsive calculator application built with clean UI design and advanced mathematical operations.",
     image: calculatorProject,
     technologies: ["JavaScript", "HTML", "CSS", "Responsive Design"],
-    demoLink: "#",
-    githubLink: "#"
+    demoLink: null, // set null for demo
+    githubLink: "https://github.com/Huzaifaanxari/Calculator"
   },
   {
     title: "Weather App", 
-    description: "Real-time weather application providing current conditions, forecasts, and location-based weather data with an intuitive and beautiful interface.",
+    description: "Real-time weather application providing current conditions and forecasts.",
     image: weatherProject,
     technologies: ["JavaScript", "API Integration", "HTML", "CSS"],
-    demoLink: "#",
-    githubLink: "#"
+    demoLink: null,
+    githubLink: "https://github.com/Huzaifaanxari/Weather_Project"
   },
   {
     title: "E-commerce Website",
-    description: "Full-featured e-commerce platform with product catalog, shopping cart, user authentication, and payment integration. Modern and mobile-responsive design.",
+    description: "Full-featured e-commerce platform with product catalog and payment integration.",
     image: ecommerceProject,
     technologies: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
-    demoLink: "#",
-    githubLink: "#"
+    demoLink: null,
+    githubLink: "https://github.com/Huzaifaanxari/Second_Sem_Pro"
   },
   {
     title: "Shopping Cart System",
-    description: "Dynamic shopping cart system with add/remove functionality, quantity management, price calculations, and local storage persistence.",
-    image: calculatorProject,
+    description: "Dynamic shopping cart system with add/remove functionality.",
+    image: ecommerceProject,
     technologies: ["JavaScript", "Local Storage", "HTML", "CSS"],
-    demoLink: "#",
-    githubLink: "#"
+    demoLink: null,
+    githubLink: "https://github.com/Huzaifaanxari/Second_Sem_Pro"
   },
   {
-    title: "Personal Portfolio",
-    description: "This very portfolio website you're viewing! A modern, responsive showcase of my work and skills built with cutting-edge technologies.",
-    image: weatherProject,
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    demoLink: "http://huzaifaweb.xyz",
-    githubLink: "#"
+    title: "Fitness Tracker",
+    description: "A fitness tracking app to log workouts and monitor progress.",
+    image: calculatorProject,
+    technologies: ["JavaScript", "Local Storage", "HTML", "CSS"],
+    demoLink: null,
+    githubLink: "https://github.com/Huzaifaanxari/Fitness-Tracker"
   }
 ]
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.2,
-      staggerChildren: 0.1
+export default function ProjectsSection() {
+  const [showModal, setShowModal] = useState(false)
+
+  const handleDemoClick = (demoLink) => {
+    if (!demoLink) {
+      setShowModal(true)
+    } else {
+      window.open(demoLink, "_blank")
     }
   }
-}
 
-const itemVariants = {
-  hidden: { y: 50, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1
-  }
-}
-
-export default function ProjectsSection() {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: -50 }}
@@ -87,9 +80,9 @@ export default function ProjectsSection() {
             </p>
           </motion.div>
           
+          {/* Projects Grid */}
           <motion.div 
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -98,7 +91,6 @@ export default function ProjectsSection() {
               <motion.div 
                 key={index} 
                 className="bg-card rounded-xl overflow-hidden shadow-professional hover:shadow-gold transition-all duration-300 group"
-                variants={itemVariants}
                 whileHover={{ scale: 1.05, y: -10 }}
                 transition={{ duration: 0.3 }}
               >
@@ -155,11 +147,9 @@ export default function ProjectsSection() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Button variant="default" size="sm" asChild>
-                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4" />
-                          Live Demo
-                        </a>
+                      <Button variant="default" size="sm" onClick={() => handleDemoClick(project.demoLink)}>
+                        <ExternalLink className="w-4 h-4" />
+                        Live Demo
                       </Button>
                     </motion.div>
                     <motion.div
@@ -178,24 +168,22 @@ export default function ProjectsSection() {
               </motion.div>
             ))}
           </motion.div>
-          
-          {/* View All Projects Button */}
-          <motion.div 
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button variant="hero" size="lg">
-                View All Projects
-              </Button>
-            </motion.div>
-          </motion.div>
+
+          {/* Modal */}
+          {showModal && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+              <div className="bg-card p-6 rounded-lg shadow-lg max-w-md text-center">
+                <h3 className="text-xl font-bold mb-4 text-primary">⚠️ No Live Demo</h3>
+                <p className="text-muted-foreground mb-6">
+                  I am so sorry 😔 currently I don’t have a live demo, 
+                  but the GitHub repository is available so you can check it out from there.
+                </p>
+                <Button variant="default" onClick={() => setShowModal(false)}>
+                  Okay, Got It
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

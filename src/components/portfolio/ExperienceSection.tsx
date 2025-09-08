@@ -8,9 +8,9 @@ const projects = [
     technologies: ["PHP", "MySQL", "JavaScript", "Bootstrap"]
   },
   {
-    name: "Medic Exam (Insurance System)",
+    name: "Medic Exam (Health Insurance System)",
     description: "Built an insurance management system for medical examinations and claims processing",
-    technologies: ["PHP", "SQL Server", "HTML/CSS", "jQuery"]
+    technologies: ["Laravel", "MySQL", "HTML/CSS", "jQuery", "AWS", "EC2"]
   },
   {
     name: "Web Scraping (Python Automation)",
@@ -48,12 +48,12 @@ export default function ExperienceSection() {
               <div className="flex-1">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-4">
                   <div>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-foreground">Junior PHP Developer</h3>
+                    <h3 className="text-2xl lg:text-3xl font-bold text-foreground">Full Stack Developer</h3>
                     <h4 className="text-xl text-primary font-semibold">Cubitrek Software House</h4>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Calendar className="w-5 h-5" />
-                    <span className="font-medium">Internship Program</span>
+                    <span className="font-medium">Developer</span>
                   </div>
                 </div>
                 
@@ -63,7 +63,7 @@ export default function ExperienceSection() {
                 </p>
                 
                 <div className="flex flex-wrap gap-3">
-                  {["PHP", "Python", "MySQL", "JavaScript", "Web Development", "Automation"].map((skill) => (
+                  {["PHP", "Python", "MySQL", "JavaScript", "Web Development", "Automation","Flutter","App Script"].map((skill) => (
                     <span key={skill} className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium">
                       {skill}
                     </span>
@@ -88,9 +88,9 @@ export default function ExperienceSection() {
                   ))}
                 </div>
                 
-                <Button variant="ghost" size="sm" className="text-primary hover:text-primary-dark p-0">
+                {/* <Button variant="ghost" size="sm" className="text-primary hover:text-primary-dark p-0">
                   Learn more <ChevronRight className="w-4 h-4" />
-                </Button>
+                </Button> */}
               </div>
             ))}
           </div>
