@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react"
-import { motion, useScroll, useMotionValueEvent } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "About", href: "#about" },
@@ -9,24 +9,24 @@ const navigation = [
   { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" }
-]
+  { name: "Contact", href: "#contact" },
+];
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const { scrollY } = useScroll()
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 50)
-  })
+    setIsScrolled(latest > 50);
+  });
 
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-card/95 backdrop-blur-md border-b border-border shadow-professional' 
-          : 'bg-transparent'
+        isScrolled
+          ? "bg-card/95 backdrop-blur-md border-b border-border shadow-professional"
+          : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -35,15 +35,15 @@ export default function Navigation() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.a 
-            href="#home" 
+          <motion.a
+            href="#home"
             className="text-2xl font-bold text-primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             MH
           </motion.a>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item, index) => (
@@ -71,12 +71,14 @@ export default function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button variant="accent" size="sm">
-                Hire Me
-              </Button>
+              <a href="mailto:huzaifaaptech321@gmail.com?subject=Job Inquiry&body=Hello, I would like to connect regarding...">
+                <Button variant="accent" size="sm">
+                  Hire Me
+                </Button>
+              </a>
             </motion.div>
           </div>
-          
+
           {/* Mobile menu button */}
           <motion.button
             className="md:hidden text-foreground hover:text-primary"
@@ -87,11 +89,15 @@ export default function Navigation() {
               animate={{ rotate: isOpen ? 180 : 0 }}
               transition={{ duration: 0.3 }}
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </motion.div>
           </motion.button>
         </div>
-        
+
         {/* Mobile Navigation */}
         <motion.div
           className="md:hidden overflow-hidden"
@@ -127,5 +133,5 @@ export default function Navigation() {
         </motion.div>
       </div>
     </motion.nav>
-  )
+  );
 }
