@@ -3,9 +3,16 @@ import { GraduationCap, Calendar } from "lucide-react"
 
 const educationData = [
   {
+    institution: "Virtual University of Pakistan",
+    degree: "BSCS (Bachelor of Science in Computer Science)",
+    period: "2025 - Still Pursuing",
+    description: "Specialized in ERP Systems and Web Development",
+    status: "ongoing"
+  },
+  {
     institution: "Aptech IT Academy",
     degree: "Diploma in Software Engineering",
-    period: "2022 - 2024",
+    period: "2022 - 2025",
     description: "Specialized in Web Designing and Development",
     status: "completed"
   },
