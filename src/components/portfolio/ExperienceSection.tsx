@@ -49,7 +49,7 @@ export default function ExperienceSection() {
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-4">
                   <div>
                     <h3 className="text-2xl lg:text-3xl font-bold text-foreground">Full Stack Developer</h3>
-                    <h4 className="text-xl text-primary font-semibold">Cubitrek Software House</h4>
+                    <h4 className="text-xl text-primary font-semibold">Cubitrek Private Ltd</h4>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Calendar className="w-5 h-5" />
