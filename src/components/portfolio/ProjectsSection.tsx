@@ -44,7 +44,7 @@ const projects = [
     description: "A fitness tracking app to log workouts and monitor progress.",
     image: calculatorProject,
     technologies: ["JavaScript", "Local Storage", "HTML", "CSS"],
-    demoLink: null,
+    demoLink: "https://fitness-tracker-frontend-two.vercel.app/",
     githubLink: "https://github.com/Huzaifaanxari/Fitness-Tracker"
   }
 ]
