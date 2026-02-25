@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
 import { useState } from "react"
 import calculatorProject from "@/assets/calculator-project.jpg"
+import fitnesstrackerProject from "@/assets/fitness-tracker.png"
 import weatherProject from "@/assets/weather-project.jpg"
 import ecommerceProject from "@/assets/ecommerce-project.jpg"
 
@@ -42,7 +43,7 @@ const projects = [
   {
     title: "Fitness Tracker",
     description: "A fitness tracking app to log workouts and monitor progress.",
-    image: calculatorProject,
+    image: fitnesstrackerProject,
     technologies: ["JavaScript", "Local Storage", "HTML", "CSS"],
     demoLink: "https://fitness-tracker-frontend-two.vercel.app/",
     githubLink: "https://github.com/Huzaifaanxari/Fitness-Tracker"
