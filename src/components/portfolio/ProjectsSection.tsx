@@ -27,6 +27,14 @@ const projects = [
     githubLink: "https://github.com/Huzaifaanxari/Second_Sem_Pro"
   },
   {
+    title: "Future Meme Machine",
+    description: "A funny entertainment React app that predicts your future in the most hilarious way possible. Just click a button and get a random, meme-style prediction that will make you laugh (or question your destiny 😄). Built with React for fast and smooth interaction.",
+    image: futureMemeMachine,
+    technologies: ["React", "JavaScript", "HTML", "CSS"],
+    demoLink: "https://future-meme-machine.vercel.app/",
+    githubLink: "https://github.com/Huzaifaanxari/future-meme-machine.git"
+  },
+  {
     title: "Shopping Cart System",
     description: "Dynamic shopping cart system with add/remove functionality.",
     image: ecommerceProject,
@@ -50,14 +58,6 @@ const projects = [
     demoLink: null,
     githubLink: "https://github.com/Huzaifaanxari/Weather_Project"
   },
-  {
-    title: "Future Meme Machine",
-    description: "A funny entertainment React app that predicts your future in the most hilarious way possible. Just click a button and get a random, meme-style prediction that will make you laugh (or question your destiny 😄). Built with React for fast and smooth interaction.",
-    image: futureMemeMachine,
-    technologies: ["React", "JavaScript", "HTML", "CSS"],
-    demoLink: "https://future-meme-machine.vercel.app/",
-    githubLink: "https://github.com/Huzaifaanxari/future-meme-machine.git"
-  }
 ]
 
 export default function ProjectsSection() {
