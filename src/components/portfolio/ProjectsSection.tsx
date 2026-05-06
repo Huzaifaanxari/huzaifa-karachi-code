@@ -7,6 +7,8 @@ import fitnesstrackerProject from "@/assets/fitness-tracker.png"
 import weatherProject from "@/assets/weather-project.jpg"
 import ecommerceProject from "@/assets/ecommerce-project.jpg"
 import futureMemeMachine from "@/assets/future-meme-project.png"
+import cefpakistan from "@/assets/cefpakistan.png"
+import bescon from "@/assets/bescon.png"
 
 const projects = [
 
@@ -19,12 +21,12 @@ const projects = [
     githubLink: "https://github.com/Huzaifaanxari/Fitness-Tracker"
   },
   {
-    title: "E-commerce Website",
-    description: "Full-featured e-commerce platform with product catalog and payment integration.",
-    image: ecommerceProject,
+    title: "CEF Pakistan",
+    description: "Developed a responsive website for CEF Pakistan (NGO) to promote free education for underprivileged children, showcasing its mission, programs, and impact while enabling users to explore and support the cause.",
+    image: cefpakistan,
     technologies: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
-    demoLink: null,
-    githubLink: "https://github.com/Huzaifaanxari/Second_Sem_Pro"
+    demoLink: "https://cefpakistan.org/",
+    githubLink: null
   },
   {
     title: "Future Meme Machine",
@@ -35,12 +37,12 @@ const projects = [
     githubLink: "https://github.com/Huzaifaanxari/future-meme-machine.git"
   },
   {
-    title: "Shopping Cart System",
-    description: "Dynamic shopping cart system with add/remove functionality.",
-    image: ecommerceProject,
-    technologies: ["JavaScript", "Local Storage", "HTML", "CSS"],
-    demoLink: null,
-    githubLink: "https://github.com/Huzaifaanxari/Second_Sem_Pro"
+    title: "Bescon",
+    description: "Developed a responsive construction company website to showcase services, projects, and company portfolio, with a modern design and easy navigation for client engagement.",
+    image: bescon,
+    technologies: ["react", "javascript", "html", "css"],
+    demoLink: "https://besconpak.com/",
+    githubLink: null
   },
   {
     title: "Calculator App",
