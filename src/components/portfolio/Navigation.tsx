@@ -25,7 +25,7 @@ export default function Navigation() {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-card/95 backdrop-blur-md border-b border-border shadow-professional"
+          ? "bg-card/95 backdrop-blur-md shadow-professional"
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -132,6 +132,20 @@ export default function Navigation() {
           </div>
         </motion.div>
       </div>
+
+      {/* Animated Bottom Border */}
+      <motion.div 
+        className="absolute bottom-0 left-0 right-0 h-[2px] bg-border/50 overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isScrolled ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <motion.div
+          className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-primary to-transparent opacity-80"
+          animate={{ x: ["-100%", "200%", "-100%"] }}
+          transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
+        />
+      </motion.div>
     </motion.nav>
   );
 }

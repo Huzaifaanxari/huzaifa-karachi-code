@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MapPin, Download } from "lucide-react";
-import heroPortrait from "@/assets/hero-portrait.jpg";
+import { MapPin, Download, Linkedin } from "lucide-react";
+import heroPortrait from "@/assets/hero-portrait.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -24,7 +24,7 @@ const itemVariants = {
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center lg:justify-end relative overflow-hidden pt-24 lg:pt-32">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-hero"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-background/20"></div>
@@ -56,11 +56,11 @@ export default function HeroSection() {
       />
 
       {/* Content */}
-      <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-16">
           {/* Text Content */}
           <motion.div
-            className="flex-1 text-center lg:text-left space-y-8"
+            className="flex-1 text-center lg:text-left space-y-8 mb-10 lg:mb-32"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -138,42 +138,42 @@ export default function HeroSection() {
                   </Button>
                 </a>
               </motion.div>
+
+              <motion.div
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <a
+                  href="https://www.linkedin.com/in/muhamamd-huzaifa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="icon"
+                    className="w-12 h-12 rounded-full border border-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground flex items-center justify-center"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </Button>
+                </a>
+              </motion.div>
             </motion.div>
           </motion.div>
 
           {/* Profile Image */}
           <motion.div
-            className="flex-shrink-0"
+            className="flex-shrink-0 flex items-end justify-center w-full lg:w-auto"
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
+
           >
-            <div className="relative">
-              <motion.div
-                className="absolute -inset-4 bg-gradient-primary rounded-full blur-lg opacity-30"
-                animate={{
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
+            <div className="relative w-[350px] sm:w-[450px] lg:w-[650px]">
+              <img
+                src={heroPortrait}
+                alt="Muhammad Huzaifa - Software Developer"
+                className="relative z-10 w-full h-auto object-contain object-bottom drop-shadow-2xl lg:scale-110 origin-bottom lg:-translate-y-30"
               />
-              <motion.div
-                className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-gold"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <motion.img
-                  src={heroPortrait}
-                  alt="Muhammad Huzaifa - Software Developer"
-                  className="w-full h-full object-cover"
-                  initial={{ scale: 1.1 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.8 }}
-                />
-              </motion.div>
             </div>
           </motion.div>
         </div>
