@@ -50,12 +50,12 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-semibold text-foreground">Portfolio</h4>
                     <a 
-                      href="https://portfolio-nu-tawny-46.vercel.app/" 
+                      href="https://www.muhammadhuzaifa.info" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-primary hover:text-primary-dark transition-colors"
                     >
-                      portfolio-nu-tawny-46.vercel.app
+                      https://www.muhammadhuzaifa.info
                     </a>
                   </div>
                 </div>
