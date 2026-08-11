@@ -89,7 +89,7 @@ export default function HeroSection() {
                 className="text-xl lg:text-2xl text-muted-foreground font-medium"
                 variants={itemVariants}
               >
-                Software Developer | PHP & Python Enthusiast
+                Software Developer | PHP Laravel Developer
               </motion.h2>
               <motion.div
                 className="flex items-center justify-center lg:justify-start gap-2 text-muted-foreground"
@@ -105,8 +105,7 @@ export default function HeroSection() {
               variants={itemVariants}
             >
               Passionate software developer creating innovative solutions with
-              modern technologies. Specialized in web development and
-              automation.
+              modern technologies. Specialized in Laravel Development, crafting efficient and scalable web applications. Dedicated to continuous learning and delivering high-quality code.
             </motion.p>
 
             <motion.div
